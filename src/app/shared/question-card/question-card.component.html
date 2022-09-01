@@ -37,14 +37,14 @@
               >{{option.name}}</mat-checkbox></p>
           </section>
           <button mat-raised-button color="primary"
-
+            
             (click)="addAnswer(itemData.id)">Add</button>
       </ng-container>
 
       <div *ngIf="itemData.type === EQuestionType.open">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Answer</mat-label>
-          <input matInput placeholder="Answer" >
+          <input formControlName="open" matInput placeholder="Answer" >
         </mat-form-field>
         <button mat-raised-button color="primary"
 
@@ -52,7 +52,7 @@
       </div>
     </div>
     <button mat-raised-button color="primary"
-      *ngIf="!isManagement && isActive"
+      *ngIf="!isManagement && isActive && !isAnswered"
       (click)="isActive = !isActive"
       >Add answer
     </button>

@@ -25,17 +25,16 @@
       <button mat-raised-button color="primary" (click)="addOption()">Add option</button>
     </div>
     <div class="body-item" *ngIf="options.length">
-      <mat-label>Options list</mat-label>
       <ul class="option-list">
         <li *ngFor="let option of options; index as i">
-          <mat-icon color="warn" class='clickable' (click)="deleteOption(i)">delete</mat-icon>{{ option }}
+          <mat-icon class='clickable' (click)="deleteOption(i)">close</mat-icon>
+          <span>{{ option }}</span>
         </li>
       </ul>
     </div>
   </div>
   <div class="question-create-actions">
-    <button *ngIf="action === EQuestionActionType.create" mat-raised-button color="primary" (click)="addQuestion()" [disabled]="!questionForm.valid">Create</button>
-    <button *ngIf="action === EQuestionActionType.update" mat-raised-button color="primary" (click)="editQuestion()" [disabled]="!questionForm.valid">Update</button>   
+    <button mat-raised-button color="primary" (click)="addQuestion()" [disabled]="!questionForm.valid">{{ action | titlecase }}</button>
     <button routerLink="/question-management" mat-raised-button color="primary">Cancel</button>
   </div>
 </form>
