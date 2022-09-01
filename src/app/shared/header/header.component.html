@@ -1,0 +1,10 @@
+<header class="header container">
+  <nav class="header-menu">
+    <ul class="header-menu-list">
+      <a class="list-item" routerLinkActive="active-link" *ngFor="let link of navList" [routerLink]="link.link"
+         [queryParams]="link.queryParams">
+        <li>{{ link.name }}</li>
+      </a>
+    </ul>
+  </nav>
+</header>

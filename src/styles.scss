@@ -1,4 +1,201 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Questionnaire-primary: mat.define-palette(mat.$indigo-palette);
+$Questionnaire-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Questionnaire-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Questionnaire-theme: mat.define-light-theme((
+  color: (
+    primary: $Questionnaire-primary,
+    accent: $Questionnaire-accent,
+    warn: $Questionnaire-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($Questionnaire-theme);
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "styles/colors";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+// SnackBar color
+.success-snackbar {
+  background-color: $green !important;
+}
+
+.warning-snackbar {
+  background-color: $orange !important;
+}
+
+.error-snackbar {
+  background-color: $red !important;
+}
+
+simple-snack-bar{
+  .mat-simple-snack-bar-content, .mat-simple-snackbar-action{
+    color: $white;
+  }
+}
+.loader-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.loader {
+  height: 20px;
+  width: 250px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.loader--dot {
+  animation-name: loader;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background-color: $black-dark;
+  position: absolute;
+  border: 2px solid white;
+}
+.loader--dot:first-child {
+  background-color: #d4e0ff;
+  animation-delay: 0.5s;
+}
+.loader--dot:nth-child(2) {
+  background-color: #bacdfd;
+  animation-delay: 0.4s;
+}
+.loader--dot:nth-child(3) {
+  background-color: #82a5ff;
+  animation-delay: 0.3s;
+}
+.loader--dot:nth-child(4) {
+  background-color: #4479ff;
+  animation-delay: 0.2s;
+}
+.loader--dot:nth-child(5) {
+  background-color: #1e5eff;
+  animation-delay: 0.1s;
+}
+.loader--dot:nth-child(6) {
+  background-color: #0041e4;
+  animation-delay: 0s;
+}
+.loader--text {
+  position: absolute;
+  top: 200%;
+  left: 0;
+  right: 0;
+  width: 4rem;
+  margin: auto;
+}
+.loader--text:after {
+  content: "Loading";
+  font-weight: bold;
+  animation-name: loading-text;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loader {
+  15% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(230px);
+  }
+  65% {
+    transform: translateX(230px);
+  }
+  95% {
+    transform: translateX(0);
+  }
+}
+@keyframes loading-text {
+  0% {
+    content: "Loading";
+  }
+  25% {
+    content: "Loading.";
+  }
+  50% {
+    content: "Loading..";
+  }
+  75% {
+    content: "Loading...";
+  }
+}
+
+.success-toast {
+  background-color: $success-light !important;
+  color: $black-dark !important;
+  button {
+      background-color: $success !important;
+      color: $black-dark !important;
+  };
+}
+.error-toast {
+  background-color: $error-light !important;
+  color: $black-dark !important;
+  button {
+    background-color: $error !important;
+    color: $black-dark !important;
+  };
+}
+.warning-toast {
+  background-color: $warning-light !important;
+  color: $black-dark !important;
+  button {
+    background-color: $warning !important;
+    color: $black-dark !important;
+  };
+}

@@ -1,0 +1,40 @@
+@import "src/styles/colors";
+
+.item{
+  min-width: 300px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: $shadows;
+  border-radius: 5px;
+
+  button{
+    margin-right: 10px;
+  }
+  .item-question {
+    font-weight: 500;
+  }
+  .buttons-group {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+mat-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    mat-radio-button {
+      margin: 5px 0px;
+    }
+}
+
+.item-answer{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  button{
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+  }
+}

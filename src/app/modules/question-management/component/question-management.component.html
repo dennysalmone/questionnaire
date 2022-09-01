@@ -1,0 +1,10 @@
+<div class="container">
+  <div *ngFor="let item of itemList$ | async">
+    <app-question-card [itemData]="item" [isManagement]="true"></app-question-card>
+  </div>
+</div>
+
+<div class="notification" *ngIf="!(itemList$ | async)?.length">
+  Question list is empty
+</div>
+

@@ -1,0 +1,14 @@
+
+:host {
+    .container {
+        display: flex;
+        justify-content: center;
+        width: 1400px;
+        flex-wrap: wrap;
+    }
+
+    .notification {
+        font-size: 22px;
+        text-align: center;
+    }
+}

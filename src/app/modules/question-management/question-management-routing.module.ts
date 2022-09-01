@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { QuestionManagementComponent } from './components/question-management/question-management.component';
 
+import { QuestionManagementComponent } from './component/question-management.component';
 
 const routes: Routes = [
   {

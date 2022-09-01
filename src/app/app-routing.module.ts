@@ -8,12 +8,12 @@ const routes: Routes = [
     redirectTo: 'question-list'
   },
   {
-    path: 'question-add',
-    loadChildren: () => import('src/app/modules/question-add-edit/question-add-edit.module').then(m => m.QuestionAddEditModule)
-  },
-  {
     path: 'question-list',
     loadChildren: () => import('src/app/modules/question-list/question-list.module').then(m => m.QuestionListModule)
+  },
+  {
+    path: 'question-action',
+    loadChildren: () => import('src/app/modules/question-action/question-action.module').then(m => m.QuestionActionModule)
   },
   {
     path: 'question-management',
@@ -29,4 +29,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { QuestionAddEditComponent } from './components/question-add-edit/question-add-edit.component';
+
+import { QuestionActionComponent } from './component/question-action.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: QuestionAddEditComponent
+    component: QuestionActionComponent
   }
 ];
 
@@ -13,5 +14,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class QuestionAddEditRoutingModule {
+export class QuestionActionRoutingModule {
 }
