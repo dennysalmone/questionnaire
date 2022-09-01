@@ -19,10 +19,12 @@
     </div>
     <div class="body-item" *ngIf="questionType !== EQuestionType.open">
       <mat-label>Options</mat-label>
-      <mat-form-field appearance="fill">
-        <input matInput formControlName="option" placeholder="Please input option" />
-      </mat-form-field>
-      <button mat-raised-button color="primary" (click)="addOption()">Add option</button>
+      <div class="body-item-row">
+        <mat-form-field appearance="fill">
+          <input matInput formControlName="option" placeholder="Please input option" />
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="addOption()">+ option</button>
+      </div>
     </div>
     <div class="body-item" *ngIf="options.length">
       <ul class="option-list">

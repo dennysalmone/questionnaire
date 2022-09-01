@@ -60,6 +60,20 @@
         margin-bottom: 0;
       }
 
+      &-row {
+        display: flex;
+        align-items: center;
+
+        mat-form-field {
+          flex: 1 0 auto;
+          margin-right: 10px;
+        }
+
+        button {
+          margin-bottom: 10px;
+        }
+      }
+
       .warning-text {
         font-size: 10px;
       }
